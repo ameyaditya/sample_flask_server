@@ -21,4 +21,5 @@ def post_url():
     return jsonify(data)
 
 if __name__ == "__main__":
-    serve(app, host='0.0.0.0', port=80)
+    app.run(host='0.0.0.0', port=4000)
+    # serve(app, host='0.0.0.0', port=80)
