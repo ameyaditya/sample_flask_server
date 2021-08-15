@@ -3,19 +3,19 @@ from waitress import serve
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/api")
 def home():
     return "Hello World"
 
-@app.route("/json")
+@app.route("/api/json")
 def json():
     return jsonify({"sampleKey": "SampleValue"})
 
-@app.route("/dynamic/<did>")
+@app.route("/api/dynamic/<did>")
 def dynamic(did):
     return jsonify({"key": f"value: {did}"})
 
-@app.route("/post_url", methods=['POST'])
+@app.route("/api/post_url", methods=['POST'])
 def post_url():
     data = request.get_json()
     return jsonify(data)
